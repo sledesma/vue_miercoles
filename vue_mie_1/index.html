@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boton {
+            background: red;
+            padding: 15px;
+            border: 0;
+            color: white;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .boton-enter {
+            padding: 20px;
+            transition: padding 200ms;
+        }
+
+        .boton-leave {
+            padding: 15px;
+            transition: padding 200ms;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="vista">
+        <button v-bind:class="claseBoton" v-on:click="clickBoton" >
+            {{ nombreBoton }}
+        </button>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+
+    <script>
+        // Usar Vue
+
+        const vm = new Vue({
+            el: '#vista',
+            methods: {
+                clickBoton() {
+                    this.claseBoton = `boton boton-${this.sigEstado}`;
+                    this.sigEstado = this.sigEstado === 'enter' ? 'leave' : 'enter'
+                }
+            },
+
+            data: {
+                nombreBoton: 'Clickeame',
+                claseBoton: 'boton',
+                sigEstado: 'enter'
+            }
+
+        });
+
+        console.log(vm);
+
+
+    </script>
+
+</body>
+</html>
