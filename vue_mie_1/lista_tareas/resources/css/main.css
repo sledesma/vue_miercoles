@@ -1,0 +1,47 @@
+html, body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.frm-agregar-tarea {
+    text-align: center;
+    padding: 50px;
+}
+
+.frm-agregar-tarea input {
+    width: 50%;
+    padding: 15px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #CCC;
+}
+
+.lista-tareas {
+    padding: 20px;
+    text-align: center;
+}
+
+.lista-tareas .item {
+    border: 1px solid black;
+    padding: 30px;
+    width: 70%;
+    display: inline-block;
+    margin: 10px;
+
+    
+}
+
+.lista-tareas .item:hover {
+
+    transform: scale(1.1);
+   
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+.nueva-tarea-desc {
+    text-align: center;
+}
