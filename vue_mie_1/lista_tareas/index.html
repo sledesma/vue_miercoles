@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="resources/css/main.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+        <link rel="stylesheet" href="resources/css/main.css" />
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+	</head>
+	<body>
+		<div id="view">
+			<div class="frm-agregar-tarea">
+				<input
+					v-model="nuevaTarea"
+					v-on:keyup.enter="agregarTarea"
+					type="text"
+					placeholder="Introduzca la nueva tarea y presione <Enter>"
+				/>
+			</div>
 
-    <div id="view">
+			<div class="nueva-tarea-desc">Nueva tarea: {{ nuevaTarea}}</div>
 
-        <div class="frm-agregar-tarea">
-            <input
-                v-model="nuevaTarea" 
-                type="text" 
-                placeholder="Introduzca la nueva tarea y haga click en el botón">
-            <button
-                v-on:click="agregarTarea"
-            >Agregar</button>
-        </div>
-
-        <div class="nueva-tarea-desc">
-            Nueva tarea: {{ nuevaTarea}}
-        </div>
-
-        <div class="lista-tareas">
-            <div 
-                class="item" 
-                v-for="itemActual in tareas">
-                <h3>{{ itemActual.nombre }}</h3>
+			<div class="lista-tareas">
+				<div class="item" v-for="itemActual in tareas">
+					<h3>{{ itemActual.nombre }}</h3>
+					<a
+						href="#"
+						v-bind:data-tarea="itemActual.nombre"
+						v-on:click="borrarTarea"
+						>Borrar</a
+					>
+				</div>
             </div>
-        </div>
+            
+            <a href="" class="btn btn-primary">Click me</a>
+		</div>
 
-    </div>
-    
-
-    <script src="vendor/js/vue.js"></script>
-    <script src="resources/js/main.js"></script>
-
-</body>
+		<script src="vendor/js/vue.js"></script>
+		<script src="resources/js/main.js"></script>
+	</body>
 </html>
