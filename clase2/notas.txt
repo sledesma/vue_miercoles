@@ -1,0 +1,13 @@
+ESTRUCTURA DE ARCHIVOS Y CARPETAS
+1) Dependencias (node_modules) - NO SE TOCA
+2) Archivos estáticos (public)
+3) Archivos fuente (src)
+4) Archivos de configuración (todos los archivos sueltos en el dir raíz)
+
+dist: EL RESULTADO DEL DESARROLLO
+
+
+ETAPAS DEL DESARROLLO
+vue create (Crear el proyecto)
+npm run serve (Desarrollar el proyecto)
+npm run build (Publicar el proyecto)
