@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <!-- 3° Usarlo (con snake-case) -->
-    <boton-toggle name="Clickeame"></boton-toggle>
+    <boton-toggle name="Clickeame" color="red"></boton-toggle>
 
-    <boton-toggle name="Hola"></boton-toggle>
+    <boton-toggle name="Hola" color="green"></boton-toggle>
 
-    <boton-toggle name="Adios"></boton-toggle>
+    <boton-toggle name="Adios" color="blue"></boton-toggle>
 
   </div>
 </template>

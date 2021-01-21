@@ -8,27 +8,27 @@
 export default {
 	methods: {
 		clickBoton() {
-			this.claseBoton = this.sigEstado;
+			this.claseBoton = `color-${this.color} ${this.sigEstado}`;
 			this.sigEstado = this.sigEstado === "enter" ? "leave" : "enter";
 		},
 	},
 
 	data() {
 		return {
-			claseBoton: "",
+			claseBoton: `color-${this.color}`,
 			sigEstado: "enter",
 		};
     },
     
     props: {
-        name: String
+        name: String,
+        color: String
     }
 };
 </script>
 
 <style scoped>
 button {
-	background: red;
 	padding: 15px;
 	border: 0;
 	color: white;
@@ -47,4 +47,8 @@ button {
 	padding: 15px;
 	transition: padding 200ms;
 }
+
+.color-red { background: red; }
+.color-blue { background: blue; }
+.color-green { background: green; }
 </style>
