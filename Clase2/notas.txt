@@ -11,3 +11,14 @@ ETAPAS DEL DESARROLLO
 vue create (Crear el proyecto)
 npm run serve (Desarrollar el proyecto)
 npm run build (Publicar el proyecto)
+
+
+
+PROCESO PARA DESARROLLAR EN vue
+
+1) Empezar con un mock
+2) Dividir el mock en componentes
+3) Crear una versión estática
+4) Definir la info de la página
+5) Definir donde debe vivir dicha info
+6) Definir qué cambia cuando la info cambia
