@@ -1,0 +1,11 @@
+App
+
+    AreaFoto
+
+    AreaForm
+
+        Cabecera
+        
+        Formulario
+
+
