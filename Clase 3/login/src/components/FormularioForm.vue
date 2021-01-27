@@ -9,6 +9,10 @@
 			<span class="campo-nombre">Contraseña</span>
 			<input type="text" class="campo-input" />
 		</div>
+
+        <div class="boton">
+            <button>Enviar</button>
+        </div>
 	</div>
 </template>
 
@@ -46,5 +50,17 @@ export default {};
     height: 40px;
     background: #D5CEC8;
     border: 0;
+}
+
+.boton {
+    padding: 10px;
+}
+
+.boton button {
+    background: #997952;
+    border: 0;
+    padding: 35px 70px;
+    cursor: pointer;
+    margin-top: 50px;
 }
 </style>
