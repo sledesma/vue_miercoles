@@ -1,23 +1,80 @@
 <template>
-	<div class="formulario">
+	<form class="formulario" v-on:submit="enviarFormulario">
 		<div class="campo">
 			<span class="campo-nombre">Usuario</span>
-			<input type="text" class="campo-input" />
+			<input type="text" class="campo-input" v-model="usuario.val" />
+            <div v-if="usuario.mensajes.required">
+                El campo usuario debe tener algún valor
+            </div>
+            <div v-if="usuario.mensajes.minLength">
+                El campo usuario debe tener 3 caracteres como mínimo
+            </div>
 		</div>
 
 		<div class="campo">
 			<span class="campo-nombre">Contraseña</span>
-			<input type="text" class="campo-input" />
+			<input type="password" class="campo-input" v-model="pass.val" />
+            <div v-if="pass.mensajes.required">
+                El campo contraseña debe tener algún valor
+            </div>
 		</div>
 
         <div class="boton">
             <button>Enviar</button>
         </div>
-	</div>
+	</form>
 </template>
 
 <script>
-export default {};
+export default {
+
+    data() {
+        return {
+            usuario: {
+                val: '',
+                mensajes: {
+                    required: false,
+                    minLength: false
+                }
+            },
+            pass: {
+                val: '',
+                mensajes: {
+                    required: false
+                }
+            }
+        }
+    },
+
+    methods: {
+        enviarFormulario(e) {
+            e.preventDefault();
+
+            this.usuario.mensajes.required = this.usuario.val === '';
+            this.usuario.mensajes.minLength = this.usuario.val.length < 3;
+
+            this.pass.mensajes.required = this.pass.val === '';
+
+            if(
+                !this.usuario.mensajes.required &&
+                !this.usuario.mensajes.minLength &&
+                !this.pass.mensajes.required
+            ) {
+                // e.target.submit();
+
+                const data = new FormData();
+                data.append('usuario', this.usuario.val);
+                data.append('pass', this.pass.val);
+
+                fetch('/registrarFormulario', {
+                    method: 'POST',
+                    body: data
+                }).then(() => alert('Correcto'));
+            }
+        }
+    }
+
+};
 </script>
 
 <style>

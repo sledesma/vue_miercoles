@@ -1,0 +1,21 @@
+Experiencia técnica del instructor con respecto a los temas del curso
+(num)
+Manejo del ambiente de entrenamiento del instructor
+(num)
+Nivel de detalle de respuestas del instructor a las preguntas
+(num)
+Capacidad del instructor para proporcionar experiencias reales y ejemplos
+(num)
+Capacidades del instructor para las presentaciones
+(num)
+Rendimiento general del instructor
+(num)
+Puntualidad del docente al comienzo de cada clase
+(num)
+El profesor respeta la duración máxima del cofee-break de 15 minutos
+(num)
+Comentarios sobre el instructor (si los hay)
+(txt)
+
+Enviar
+(btn)
