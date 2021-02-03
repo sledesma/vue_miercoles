@@ -1,0 +1,5 @@
+1) VueRouter
+2) Ciclo de Vida
+3) Axios
+4) Filtros
+5) Mixins

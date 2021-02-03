@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#home {
+				height: 90vh;
+				background-color: red;
+                display: none;
+			}
+
+			#contacto {
+				height: 90vh;
+				background-color: green;
+                display: none;
+			}
+
+            #home:target,
+            #contacto:target {
+                display: block;
+            }
+		</style>
+	</head>
+	<body>
+		<!--Hash Routing-->
+		<a href="#home" class="router-link">Ir a home</a>
+		<a href="#contacto" class="router-link">Ir a contacto</a>
+
+		<div id="home"></div>
+		<div id="contacto"></div>
+
+		<script>
+            const pages = [
+                '#home',
+                '#contacto'
+            ];
+
+			document.querySelectorAll(".router-link").forEach((item) => {
+				item.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    window.location = e.target.href;
+				});
+			});
+		</script>
+	</body>
+</html>
