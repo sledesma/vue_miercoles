@@ -10,41 +10,22 @@
 
 <script>
 import PostItem from "../components/PostItem.vue";
+import axios from "axios";
 
 export default {
   data() {
     return {
-      posts: [
-        {
-          id: 1,
-          title: "ea molestias quasi exercitationem repellat qui ipsa sit aut"
-        },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" },
-        { id: 1, title: "Post1" },
-        { id: 2, title: "Post2" }
-      ]
+      posts: []
     };
   },
 
-  components: { PostItem }
+  components: { PostItem },
+
+  created() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then(result => this.posts = result.data);
+  }
 };
 </script>
 

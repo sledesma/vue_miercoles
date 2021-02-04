@@ -33,4 +33,10 @@ a:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 767px) {
+  a {
+    width: 100%;
+  }
+}
 </style>
