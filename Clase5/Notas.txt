@@ -1,0 +1,8 @@
+HTML
+JS
+CSS
+Info
+
+Vue.Js => Manejo del DOM (HTML, CSS y JS)
+VueRouter => Manejo de la navegación (SPA)
+Vuex => Manejo de la Info (Info)
