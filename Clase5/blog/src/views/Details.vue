@@ -1,20 +1,27 @@
 <template>
   <div>
-      Hola
+      <router-link to="/">Atras</router-link> <br />
+      Id {{ post.id }}
+      <h2>{{ post.title }}</h2>
+      <img v-bind:src="post.image">
+      <p>{{ post.desc }}</p>
   </div>
 </template>
 
 <script>
 export default {
 
-    computed: {
-        post() {
-            return this.$store.getters.getPosts()[this.$route.params.id];
+    data() {
+        return {
+            paramId: Number(this.$route.params.id)
         }
     },
-    
-    created() {
-        console.log(this.post);
+
+    computed: {
+        post() {
+            const nParamId = Number(this.paramId);
+            return this.$store.getters.getPosts(nParamId - 1);
+        }
     }
 
 }
